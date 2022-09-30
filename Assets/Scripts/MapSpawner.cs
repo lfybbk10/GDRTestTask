@@ -9,9 +9,6 @@ public class MapSpawner : MonoBehaviour
     [SerializeField] private GameObject _coinPrefab;
     [SerializeField] private GameObject _spikePrefab;
 
-    [SerializeField] private int _coinCount;
-    [SerializeField] private int _spikeCount;
-
     private BoxCollider2D _collider;
 
     private void Awake()
@@ -21,8 +18,8 @@ public class MapSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnObjects(_coinPrefab,_coinCount);
-        SpawnObjects(_spikePrefab,_spikeCount);
+        SpawnObjects(_coinPrefab,GameParams.MoneyCount);
+        SpawnObjects(_spikePrefab,GameParams.SpikeCount);
     }
 
 

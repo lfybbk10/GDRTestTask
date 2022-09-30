@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -17,7 +18,8 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePos = Input.mousePosition;
-            _circleMoveHandler.HandleClick(Camera.main.ScreenToWorldPoint(mousePos));
+            if(!_circleMoveHandler.IsDestroyed())
+                _circleMoveHandler.HandleClick(Camera.main.ScreenToWorldPoint(mousePos));
         }
     }
 }

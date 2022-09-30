@@ -7,8 +7,21 @@ using UnityEngine;
 public class CircleMoveHandler : MonoBehaviour
 {
     [SerializeField] private LineRenderer _lineRenderer;
+    
     private List<Vector3> movePositions = new ();
     private bool isMoving;
+
+    private void OnEnable()
+    {
+        EndGameHandler.OnWinGame += DisableHandler;
+        EndGameHandler.OnLoseGame += DisableHandler;
+    }
+
+    private void OnDisable()
+    {
+        EndGameHandler.OnWinGame -= DisableHandler;
+        EndGameHandler.OnLoseGame -= DisableHandler;
+    }
 
     private void Start()
     {
@@ -26,6 +39,9 @@ public class CircleMoveHandler : MonoBehaviour
 
     public void HandleClick(Vector2 position)
     {
+        if(!enabled)
+            return;
+        
         movePositions.Add(position);
         
         _lineRenderer.positionCount++;
@@ -40,5 +56,12 @@ public class CircleMoveHandler : MonoBehaviour
             movePositions.Remove(movePositions[0]);
             isMoving = false;
         });
+    }
+
+    private void DisableHandler()
+    {
+        DOTween.KillAll();
+        movePositions.Clear();
+        enabled = false;
     }
 }
