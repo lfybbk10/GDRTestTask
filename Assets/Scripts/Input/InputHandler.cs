@@ -6,7 +6,14 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
+    private Camera _mainCamera;
+    
     private CircleMoveHandler _circleMoveHandler;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
 
     private void Start()
     {
@@ -19,7 +26,7 @@ public class InputHandler : MonoBehaviour
         {
             var mousePos = Input.mousePosition;
             if(!_circleMoveHandler.IsDestroyed())
-                _circleMoveHandler.HandleClick(Camera.main.ScreenToWorldPoint(mousePos));
+                _circleMoveHandler.HandleClick(_mainCamera.ScreenToWorldPoint(mousePos));
         }
     }
 }

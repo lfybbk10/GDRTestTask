@@ -22,7 +22,6 @@ public class MoneyHandler : MonoBehaviour
         
         if (MoneyValue >= GameParams.MoneyCount)
         {
-            Debug.Log("reach");
             OnMoneyLimitReached?.Invoke();
         }
     }
