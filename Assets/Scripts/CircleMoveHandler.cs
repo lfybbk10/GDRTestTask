@@ -51,7 +51,7 @@ public class CircleMoveHandler : MonoBehaviour
     private void Move()
     {
         isMoving = true;
-        transform.DOMove(movePositions[0], 2).OnComplete(() =>
+        transform.DOMove(movePositions[0], 1).OnComplete(() =>
         {
             movePositions.Remove(movePositions[0]);
             isMoving = false;
