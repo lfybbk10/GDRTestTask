@@ -9,10 +9,7 @@ public class EndGameHandler : MonoBehaviour
     public static Action OnWinGame;
     public static Action OnLoseGame;
 
-    private void Awake()
-    {
-        _circleDieHandler = FindObjectOfType<CircleDieHandler>();
-    }
+    private void Awake() => _circleDieHandler = FindObjectOfType<CircleDieHandler>();
 
     private void OnEnable()
     {
@@ -26,13 +23,7 @@ public class EndGameHandler : MonoBehaviour
         _circleDieHandler.OnDied -= LoseGame;
     }
 
-    private void WinGame()
-    {
-        OnWinGame?.Invoke();
-    }
-    
-    private void LoseGame()
-    {
-        OnLoseGame?.Invoke();
-    }
+    private void WinGame() => OnWinGame?.Invoke();
+
+    private void LoseGame() => OnLoseGame?.Invoke();
 }

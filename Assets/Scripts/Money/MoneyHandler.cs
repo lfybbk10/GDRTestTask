@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoneyHandler : MonoBehaviour
@@ -10,10 +8,7 @@ public class MoneyHandler : MonoBehaviour
     public static Action OnMoneyChanged;
     public static Action OnMoneyLimitReached;
 
-    private void Awake()
-    {
-        MoneyValue = 0;
-    }
+    private void Awake() => MoneyValue = 0;
 
     public static void AddMoney()
     {

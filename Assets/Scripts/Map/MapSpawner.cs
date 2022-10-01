@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,10 +8,7 @@ public class MapSpawner : MonoBehaviour
 
     private BoxCollider2D _collider;
 
-    private void Awake()
-    {
-        _collider = GetComponent<BoxCollider2D>();
-    }
+    private void Awake() => _collider = GetComponent<BoxCollider2D>();
 
     private void Start()
     {

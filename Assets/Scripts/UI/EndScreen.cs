@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +20,6 @@ public class EndScreen : MonoBehaviour
 
     private void WinGame()
     {
-        print("win");
         _endScreen.SetActive(true);
         _label.color = Color.green;
         _label.SetText("Победа!");
