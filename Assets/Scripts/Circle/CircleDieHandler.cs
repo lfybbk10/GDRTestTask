@@ -10,6 +10,6 @@ public class CircleDieHandler : MonoBehaviour
     {
         DOTween.KillAll();
         OnDied?.Invoke();
-        Destroy(gameObject,0.2f);
+        Destroy(gameObject,0.1f);
     }
 }

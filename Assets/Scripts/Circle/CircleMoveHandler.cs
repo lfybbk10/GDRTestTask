@@ -6,7 +6,7 @@ public class CircleMoveHandler : MonoBehaviour
 {
     [SerializeField] private LineRenderer _lineRenderer;
     
-    private List<Vector3> movePositions = new ();
+    private List<Vector3> movePositions = new List<Vector3>();
     private bool isMoving;
 
     private void OnEnable()

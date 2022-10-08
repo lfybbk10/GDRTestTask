@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -16,7 +15,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             var mousePos = Input.mousePosition;
-            if(!_circleMoveHandler.IsDestroyed())
+            if(_circleMoveHandler.IsValid())
                 _circleMoveHandler.HandleClick(_mainCamera.ScreenToWorldPoint(mousePos));
         }
     }
